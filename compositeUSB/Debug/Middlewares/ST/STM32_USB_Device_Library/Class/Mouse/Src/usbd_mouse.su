@@ -1,0 +1,10 @@
+usbd_mouse.c:365:10:USBD_MOUSE_Init	16	static
+usbd_mouse.c:390:10:USBD_MOUSE_DeInit	16	static
+usbd_mouse.c:414:10:USBD_MOUSE_Setup	40	static
+usbd_mouse.c:532:9:USBD_MOUSE_SendReport	32	static
+usbd_mouse.c:558:10:USBD_MOUSE_GetPollingInterval	24	static
+usbd_mouse.c:587:11:USBD_MOUSE_GetFSCfgDesc	16	static
+usbd_mouse.c:600:11:USBD_MOUSE_GetHSCfgDesc	16	static
+usbd_mouse.c:613:11:USBD_MOUSE_GetOtherSpeedCfgDesc	16	static
+usbd_mouse.c:626:10:USBD_MOUSE_DataIn	16	static
+usbd_mouse.c:643:11:USBD_MOUSE_GetDeviceQualifierDesc	16	static
