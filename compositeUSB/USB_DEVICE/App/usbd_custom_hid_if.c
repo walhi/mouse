@@ -207,6 +207,7 @@ static int8_t CUSTOM_HID_DeInit_FS(void)
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 {
   /* USER CODE BEGIN 6 */
+  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
   return (USBD_OK);
   /* USER CODE END 6 */
 }

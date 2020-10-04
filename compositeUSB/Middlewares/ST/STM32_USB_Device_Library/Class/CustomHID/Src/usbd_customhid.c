@@ -237,7 +237,7 @@ __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_CfgHSDesc[USB_CUSTOM_HID_CONFIG_DES
 		0x00,         /*bCountryCode: Hardware target country*/
 		0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
 		0x22,         /*bDescriptorType*/
-		HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+		USBD_CUSTOM_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
 		0x00,
 		/******************** Descriptor of Mouse endpoint ********************/
 		0x07,          /*bLength: Endpoint Descriptor size*/
@@ -320,7 +320,7 @@ __ALIGN_BEGIN static uint8_t USBD_CUSTOM_HID_OtherSpeedCfgDesc[USB_CUSTOM_HID_CO
 		0x00,         /*bCountryCode: Hardware target country*/
 		0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
 		0x22,         /*bDescriptorType*/
-		HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+		USBD_CUSTOM_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
 		0x00,
 		/******************** Descriptor of Mouse endpoint ********************/
 		0x07,          /*bLength: Endpoint Descriptor size*/
@@ -485,6 +485,33 @@ uint8_t  USBD_CUSTOM_HID_DeInit(USBD_HandleTypeDef *pdev,
 	return USBD_OK;
 }
 
+
+
+__ALIGN_BEGIN static uint8_t HID_CUSTOM_ReportDesc[USBD_CUSTOM_HID_REPORT_DESC_SIZE]  __ALIGN_END =
+{
+		  /* USER CODE BEGIN 0 */
+				0x06, 0x00, 0xff,              // USAGE_PAGE (Generic Desktop)
+				    0x09, 0x01,                    // USAGE (Vendor Usage 1)
+				    0xa1, 0x01,                    // COLLECTION (Application)
+				    0x85, 0x01,                    //   REPORT_ID (1)
+				    0x09, 0x01,                    //   USAGE (Vendor Usage 1)
+				    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+				    0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
+				    0x75, 0x08,                    //   REPORT_SIZE (8)
+				    0x95, 0x01,                    //   REPORT_COUNT (1)
+				    0xb1, 0x82,                    //   FEATURE (Data,Var,Abs,Vol)
+				    0x85, 0x01,                    //   REPORT_ID (1)
+				    0x09, 0x01,                    //   USAGE (Vendor Usage 1)
+				    0x91, 0x82,                    //   OUTPUT (Data,Var,Abs,Vol)
+
+				    0x85, 0x02,                    //   REPORT_ID (2)
+				    0x09, 0x04,                    //   USAGE (Vendor Usage 4)
+				    0x75, 0x08,                    //   REPORT_SIZE (8)
+				    0x95, 4,                    //   REPORT_COUNT (N)
+				    0x81, 0x82,                    //   INPUT (Data,Var,Abs,Vol)
+		  /* USER CODE END 0 */
+		  0xC0    /*     END_COLLECTION	             */
+};
 /**
  * @brief  USBD_CUSTOM_HID_Setup
  *         Handle the CUSTOM_HID specific requests
@@ -553,7 +580,7 @@ uint8_t  USBD_CUSTOM_HID_Setup(USBD_HandleTypeDef *pdev,
 				if (req->wValue >> 8 == CUSTOM_HID_REPORT_DESC)
 				{
 					len = MIN(USBD_CUSTOM_HID_REPORT_DESC_SIZE, req->wLength);
-					pbuf = ((USBD_CUSTOM_HID_ItfTypeDef *)pdev->pClassSpecificInterfaceCustomHID)->pReport;
+					pbuf = HID_CUSTOM_ReportDesc;
 				}
 				else
 				{

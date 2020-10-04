@@ -52,7 +52,7 @@ extern "C" {
 
 
 
-#define HID_MOUSE_REPORT_DESC_SIZE    74U
+#define USBD_CUSTOM_HID_REPORT_DESC_SIZE     38U
 
 #define HID_DESCRIPTOR_TYPE           0x21U
 #define HID_REPORT_DESC               0x22U

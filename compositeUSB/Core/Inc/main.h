@@ -60,8 +60,38 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LED_Pin GPIO_PIN_13
 #define LED_GPIO_Port GPIOC
+#define BTN4_Pin GPIO_PIN_2
+#define BTN4_GPIO_Port GPIOA
+#define RETURN_TO_BOOTLOADER_Pin GPIO_PIN_3
+#define RETURN_TO_BOOTLOADER_GPIO_Port GPIOA
+#define RIGHT_Pin GPIO_PIN_4
+#define RIGHT_GPIO_Port GPIOA
+#define UP_Pin GPIO_PIN_5
+#define UP_GPIO_Port GPIOA
+#define LEFT_Pin GPIO_PIN_6
+#define LEFT_GPIO_Port GPIOA
+#define DOWN_Pin GPIO_PIN_7
+#define DOWN_GPIO_Port GPIOA
+#define BTN5_Pin GPIO_PIN_0
+#define BTN5_GPIO_Port GPIOB
+#define BTN3_Pin GPIO_PIN_1
+#define BTN3_GPIO_Port GPIOB
+#define BTN2_Pin GPIO_PIN_10
+#define BTN2_GPIO_Port GPIOB
+#define BTN1_Pin GPIO_PIN_11
+#define BTN1_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
+#define L_KEY_Pin BTN1_Pin
+#define L_KEY_GPIO_Port BTN1_GPIO_Port
+#define R_KEY_Pin BTN2_Pin
+#define R_KEY_GPIO_Port BTN2_GPIO_Port
+#define M_KEY_Pin BTN3_Pin
+#define M_KEY_GPIO_Port BTN3_GPIO_Port
+#define SCROLL_UP_Pin BTN4_Pin
+#define SCROLL_UP_GPIO_Port BTN4_GPIO_Port
+#define SCROLL_DOWN_Pin BTN5_Pin
+#define SCROLL_DOWN_GPIO_Port BTN5_GPIO_Port
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

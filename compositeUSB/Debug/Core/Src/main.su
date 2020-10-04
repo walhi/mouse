@@ -1,6 +1,8 @@
-main.c:74:5:main	32	static
-main.c:160:6:SystemClock_Config	88	static
-main.c:206:13:MX_GPIO_Init	40	static
-main.c:238:6:StartDefaultTask	16	static
-main.c:259:6:HAL_TIM_PeriodElapsedCallback	16	static
-main.c:276:6:Error_Handler	4	static
+main.c:99:5:main	32	static
+main.c:192:6:SystemClock_Config	88	static
+main.c:238:13:MX_GPIO_Init	40	static
+main.c:284:6:LEDTask	16	static
+main.c:293:6:customHIDTask	24	static
+main.c:311:6:mouseTask	32	static
+main.c:402:6:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:419:6:Error_Handler	4	static

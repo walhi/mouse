@@ -87,8 +87,8 @@ extern "C" {
   */
 
 
-#define MOUSE_INTERFACE_IDX 0x0                            	// Index of MSC interface
-#define COMPOSITE_INTERFACE_IDX 0x1                            	// Index of CDC interface
+#define MOUSE_INTERFACE_IDX 0x0                            	// Index of mouse interface
+#define COMPOSITE_INTERFACE_IDX 0x1                            	// Index of custom HID interface
 
 // endpoints numbers
 // endpoints numbers
